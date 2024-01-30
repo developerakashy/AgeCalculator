@@ -1,0 +1,243 @@
+:root{
+  --White: hsl(0, 0%, 100%);
+  --Offwhite: hsl(0, 0%, 94%);
+  --Lightgrey: hsl(0, 0%, 86%);
+  --Smokeygrey: hsl(0, 1%, 44%);
+  --Offblack: hsl(0, 0%, 8%);
+  --Purple: hsl(259, 100%, 65%);
+  --Lightred: hsl(0, 100%, 67%);
+  
+}
+
+
+@font-face {
+  font-family: pop;
+  src: url(assets/fonts/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: popextrabold;
+  src: url(assets/fonts/Poppins-ExtraBoldItalic.ttf);
+}
+@font-face {
+  font-family: popbold;
+  src: url(assets/fonts/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: popitalic;
+  src: url(assets/fonts/Poppins-Italic.ttf);
+}
+
+
+body{
+  
+  background-color: var(--Offwhite);
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+main{
+  /* width: %; */
+  background-color: var(--White);
+  border-radius: 14px 14px 140px 14px;
+  
+}
+
+
+#dobInputArea{
+  display: flex;
+  gap:20px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input{
+  font-family: popbold;
+  padding: 4px 16px 4px 16px;
+  max-width:100px ;
+  font-size: 32px;
+  outline: none;
+  border: 1px solid var(--Lightgrey);
+  border-radius: 6px ;
+}
+
+
+#dayTargeted,#monthTargeted,#yearTargeted{
+  font-weight: 500;
+  font-family: popitalic;
+  color: var(--Lightred);
+}
+input:hover,input:focus{
+  border: 1px solid var(--Offblack);
+}
+
+label{
+  font-family: pop;
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--Smokeygrey);
+}
+
+
+.dobInput{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+
+.topArea{
+  display: flex;
+  border-bottom:2px solid var(--Lightgrey);
+  margin:  40px 40px 0px 40px;
+  padding-bottom: 34px;
+}
+
+
+.buttonElement{
+  margin-left: 22px;
+}
+
+
+button:hover,button:focus{
+  background-color: var(--Offblack);
+}
+
+
+button{
+  position: relative;
+  top:105%;
+  padding: 16px 18px 16px 18px;
+  border-radius: 100%;
+  margin-left: 40px;
+  background-color: var(--Purple);
+  border: none;
+}
+
+
+#ageDisplay{
+  font-family: popextrabold;
+  font-size: 68px;
+  display: flex;
+  flex-direction: column;
+  margin: 32px;
+  padding-bottom:32px ;
+}
+
+
+.ageValueAttribute{
+  display: flex;
+  gap: 4px;
+  margin-bottom: -28px ;
+}
+
+
+.ageValueAttribute p{
+  margin: 0px;
+}
+
+
+.ageYearValue,.ageMonthValue,.ageDayValue{
+  color: var(--Purple);
+}
+
+
+
+
+@media(width<680px){
+
+  button{
+      position: absolute;
+      top: 80%;
+      left: 41%;
+      margin: 0px;
+  }
+
+  main{
+      width: 90%;
+      margin:  auto;
+      border-radius: 18px 18px 90px 18px;
+  }
+
+  input{
+      font-size: 20px;
+      width:70%;
+      padding: 8px 12px 8px 12px;
+      border-radius: 6px;
+
+  }
+  #dobInputArea{
+      padding-bottom: 30px;
+      gap: 12px;
+      justify-content: space-around;
+  }
+
+  .dobInput{
+      display: flex;
+  }
+
+  .topArea{
+      position: relative;
+      display: block;
+      margin: 40px 24px 0px 24px;
+      padding-bottom: 30px;
+  }
+
+  label{
+      font-size: 12px;
+  }
+
+  #ageDisplay{
+      padding-bottom: 20px;
+      font-size: 55px;
+      margin: 55px 0px 40px 24px;
+  }
+  .ageValueAttribute{
+    margin-bottom: -20px;
+  }  
+
+}
+
+
+
+
+@media(width<375px){
+  input{
+      font-size: 16px;
+      width:50px;
+      padding: 6px 8px 6px 8px;
+      border-radius: 6px;
+  }
+  main{
+    width: 100%;
+  }
+  #dobInputArea{
+      padding-bottom: 20px;
+      gap: 2px;
+      justify-content: space-around;
+  }
+
+  button{
+      left:37%;
+  }
+
+  #ageDisplay{
+    padding-bottom: 12px;
+      font-size:42px ;
+  }
+  .ageValueAttribute{
+    margin-bottom: -10px;
+  }  
+  
+
+}

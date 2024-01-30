@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Calculator</title>
+  </head>
+  <link rel="stylesheet" href="index.css" />
+  <body>
+    <main>
+      <section class="topArea">
+        <section id="dobInputArea">
+          <div class="dobInput">
+            <label for="day">D A Y</label>
+            <input type="number" name="day" id="Day" placeholder="DD"/>
+            <label id="dayTargeted"></label>
+          </div>
+          <div class="dobInput">
+            <label for="month">M O N T H</label>
+            <input type="number" name="month" id="Month" placeholder="MM" />
+            <label id="monthTargeted"></label>
+          </div>
+          <div class="dobInput">
+            <label for="day">Y E A R</label>
+            <input type="number" name="year" id="Year" placeholder="YYYY" />
+            <label id="yearTargeted"></label>
+          </div>
+        </section>
+
+        <section class="buttonElement">
+          <button class="button">
+            <img
+              height="26px"
+              width="26px"
+              src="assets/images/icon-arrow.svg"
+              alt="click"
+            />
+          </button>
+        </section>
+      </section>
+
+      <section id="ageDisplay">
+        <div class="ageValueAttribute">
+          <p class="ageYearValue">--</p>
+          <p class="ageAttribute">years</p>
+        </div>
+        <div class="ageValueAttribute">
+          <p class="ageMonthValue">--</p>
+          <p class="ageAttribute">months</p>
+        </div>
+        <div class="ageValueAttribute">
+          <p class="ageDayValue">--</p>
+          <p class="ageAttribute">days</p>
+        </div>
+      </section>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
