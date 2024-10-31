@@ -210,7 +210,7 @@ let ageCalculator = (day, month, year, dobd, dobm, doby) => {
     doby > year ||
     dobd < 1 ||
     dobm < 1 ||
-    doby < 1 
+    doby < 1
   ) {
     if (dobd > monthLimit || dobd < 1) {
       if(dobd == "") {
@@ -264,7 +264,7 @@ let ageCalculator = (day, month, year, dobd, dobm, doby) => {
         ageDisplayMonth.textContent = "--";
         ageDisplayYear.textContent = "--";
         buttonPlacementAfterError();
-      }  
+      }
        else {
         yearError.textContent = "Must be in past";
         headLabelRed();
@@ -278,9 +278,12 @@ let ageCalculator = (day, month, year, dobd, dobm, doby) => {
     let ageYear = year - 1 - doby;
     let remainingMonth = 12 - dobm + month;
     let ageDays = daysCalculator(day, dobd, doby);
-    if (remainingMonth > 12) {
+    if (remainingMonth >= 12) {
       remainingMonth -= 12;
       ageYear += 1;
+    }
+    if(dobd == day){
+      ageDays = 0
     }
     if (dobd > day) {
       remainingMonth -= 1;
@@ -289,7 +292,7 @@ let ageCalculator = (day, month, year, dobd, dobm, doby) => {
       }
     }
 
-    
+
     ageDisplayDay.textContent = ageDays;
     ageDisplayMonth.textContent = remainingMonth;
     ageDisplayYear.textContent = ageYear;
