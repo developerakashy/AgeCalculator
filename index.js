@@ -2,10 +2,10 @@ let dobd;
 let dobm;
 let doby;
 
-const now = new Date("2024-11-02T00:00");
-const year = now.getFullYear();
-const date = now.getDate();
-const month = now.getMonth() + 1;
+const dateNow = new Date();
+const year = dateNow.getFullYear();
+const date = dateNow.getDate();
+const month = dateNow.getMonth() + 1;
 
 const body = document.body;
 let dobDate = document.querySelector("#Date");
