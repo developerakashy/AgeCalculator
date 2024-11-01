@@ -2,7 +2,7 @@ let dobd;
 let dobm;
 let doby;
 
-const now = new Date();
+const now = new Date("2024-11-02T00:00");
 const year = now.getFullYear();
 const date = now.getDate();
 const month = now.getMonth() + 1;
@@ -257,7 +257,10 @@ let ageCalculator = (date, month, year, dobd, dobm, doby) => {
     let ageDays = daysCalculator(date, dobd, doby);
     if (remainingMonth >= 12) {
       remainingMonth -= 12;
-      ageYear += 1;
+
+      if(dobm != month || dobd <= date){
+        ageYear += 1;
+      }
     }
 
     if (dobd > date) {
