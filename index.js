@@ -173,7 +173,7 @@ let ageCalculator = (date, month, year, dobd, dobm, doby) => {
     }
     else if (dobm == month && dobd >= date) {
 
-      if (dobd == day) {
+      if (dobd == date) {
         ageDisplayDays.textContent = 0;
         ageDisplayMonths.textContent = 0;
         ageDisplayYears.textContent = 0;
@@ -200,7 +200,7 @@ let ageCalculator = (date, month, year, dobd, dobm, doby) => {
         cuurYearMonth += 1;
       }
       let cuurYear = year - doby;
-      let cuurYearDays = daysCalculator(day, dobd, doby);
+      let cuurYearDays = daysCalculator(date, dobd, doby);
       ageDisplayDays.textContent = cuurYearDays;
       ageDisplayMonths.textContent = cuurYearMonth;
       ageDisplayYears.textContent = cuurYear;
