@@ -110,54 +110,58 @@ document.querySelector(".button").addEventListener("click", (event) => {
   ageCalculator(date, month, year, dobd, dobm, doby);
 });
 
+let monthPicker = (dobm, doby) => {
+  if (
+    dobm == 1 ||
+    dobm == 3 ||
+    dobm == 5 ||
+    dobm == 7 ||
+    dobm == 8 ||
+    dobm == 10 ||
+    dobm == 12
+  ) {
+    return 31;
+  } else if (dobm == 4 || dobm == 6 || dobm == 9 || dobm == 11) {
+    return 30;
+  } else if (dobm == 2) {
+    if (doby % 4 == 0) {
+      return 29;
+    } else {
+      return 28;
+    }
+  } else {
+    return 31;
+  }
+};
+
+
+const correctValueAfterWrong = (dobd, doby, monthLimit, year) => {
+  if (dobd <= monthLimit) {
+    dateError.textContent = "";
+  }
+  if (month < 13) {
+    monthError.textContent = "";
+  }
+  if (doby <= year) {
+    yearError.textContent = "";
+  }
+};
+
+
+let daysCalculator = (date, dobd, doby) => {
+  if (date >= dobd) {
+    return date - dobd;
+  } else {
+    var dobMonthPicker = monthPicker(dobm, doby);
+    return (dobMonthPicker - dobd) + date;
+  }
+};
+
 let ageCalculator = (date, month, year, dobd, dobm, doby) => {
 
-  let monthPicker = (dobm, doby) => {
-    if (
-      dobm == 1 ||
-      dobm == 3 ||
-      dobm == 5 ||
-      dobm == 7 ||
-      dobm == 8 ||
-      dobm == 10 ||
-      dobm == 12
-    ) {
-      return 31;
-    } else if (dobm == 4 || dobm == 6 || dobm == 9 || dobm == 11) {
-      return 30;
-    } else if (dobm == 2) {
-      if (doby % 4 == 0) {
-        return 29;
-      } else {
-        return 28;
-      }
-    } else {
-      return 31;
-    }
-  };
   let monthLimit = monthPicker(dobm, doby);
 
-  const correctValueAfterWrong = (dobd, doby, monthLimit, year) => {
-    if (dobd <= monthLimit) {
-      dateError.textContent = "";
-    }
-    if (month < 13) {
-      monthError.textContent = "";
-    }
-    if (doby <= year) {
-      yearError.textContent = "";
-    }
-  };
   correctValueAfterWrong(dobd, doby, monthLimit, year);
-
-  let daysCalculator = (date, dobd, doby) => {
-    if (date >= dobd) {
-      return date - dobd;
-    } else {
-      var previousMonthPicker = monthPicker(month - 1, doby);
-      return (previousMonthPicker - dobd) + date;
-    }
-  };
 
 
   if ((doby == year && dobm >= month) || (doby == year && dobm < month)) {
@@ -251,6 +255,7 @@ let ageCalculator = (date, month, year, dobd, dobm, doby) => {
       }
     }
   }
+  
   else {
     let ageYear = (year - 1) - doby;
     let remainingMonth = (12 - dobm) + month;
